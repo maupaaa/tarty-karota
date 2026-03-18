@@ -20,3 +20,4 @@
         
 -   **Baza wiedzy:** Szczegółowe opisy Wielkich i Małych Arkanów, znaczenia poszczególnych kolorów, ciekawostki związane z historią tarota.
     
+Autor : Zofia Palińska 
