@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bfmgawuqkbc33"]
+
+[ext_resource type="Script" uid="uid://ba7cf16ncxljs" path="res://card.gd" id="1_rjlel"]
+[ext_resource type="Texture2D" uid="uid://cin7d00g63vvx" path="res://CardBacks.png" id="2_q5obu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e484p"]
+size = Vector2(59.5, 105.5)
+
+[sub_resource type="Animation" id="Animation_fpac0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_1i5pp"]
+resource_name = "turn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1e-05, 0.2), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjytt"]
+_data = {
+&"RESET": SubResource("Animation_fpac0"),
+&"turn": SubResource("Animation_1i5pp")
+}
+
+[node name="Card" type="Area2D" unique_id=1387365119]
+script = ExtResource("1_rjlel")
+
+[node name="Card" type="Sprite2D" parent="." unique_id=89901413]
+position = Vector2(313, 283)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q5obu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1510312981]
+position = Vector2(313.25, 282.75)
+shape = SubResource("RectangleShape2D_e484p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=752452273]
+libraries/ = SubResource("AnimationLibrary_pjytt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

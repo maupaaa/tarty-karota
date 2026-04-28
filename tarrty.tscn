@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ebwuxidi0710"]
+
+[ext_resource type="PackedScene" uid="uid://bfmgawuqkbc33" path="res://card.tscn" id="1_5hktw"]
+[ext_resource type="Texture2D" uid="uid://djhs052yc1seq" path="res://00-TheFool.png" id="2_i35dr"]
+[ext_resource type="Texture2D" uid="uid://idosgirnbj10" path="res://06-TheLovers.png" id="3_t44kc"]
+[ext_resource type="Texture2D" uid="uid://eay2a6q4mgox" path="res://08-Strength.png" id="4_pn4dk"]
+
+[node name="MainScene" type="Control" unique_id=628115596]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Card" parent="." unique_id=1387365119 instance=ExtResource("1_5hktw")]
+position = Vector2(-160, -15)
+card_front = ExtResource("2_i35dr")
+
+[node name="Card2" parent="." unique_id=595323998 instance=ExtResource("1_5hktw")]
+position = Vector2(5, -14)
+card_front = ExtResource("3_t44kc")
+
+[node name="Card3" parent="." unique_id=2122263262 instance=ExtResource("1_5hktw")]
+position = Vector2(210, -12)
+card_front = ExtResource("4_pn4dk")
